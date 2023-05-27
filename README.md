@@ -21,6 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
+* ...
 
 Ejercicio Programacion avanzada
 1. Permitir el registro de un ISP (Internet Service Provider)
@@ -28,13 +29,13 @@ Ejercicio Programacion avanzada
 simétrico, etc.)
 3. Cada cliente se puede registrar y puede contratar planes de internet de cualquier
 ISP, cuya solicitud queda pendiente de aprobación por parte del ISP.
-a. Poder listar todos los planes agrupados por ISP.
-b. Poder solicitar la contratación de cualquier plan de cualquier ISP.
-c. Poder listar las solicitudes rechazadas en el último mes.
+* a. Poder listar todos los planes agrupados por ISP.
+* b. Poder solicitar la contratación de cualquier plan de cualquier ISP.
+* c. Poder listar las solicitudes rechazadas en el último mes.
 4. El ISP puede aprobar o rechazar la solicitud de contratación del servicio.
 5. Una vez aprobada la solicitud y contratado un plan específico, el cliente puede
 solicitar el cambio del mismo, quedando este pedido sujeto a aprobación por parte
 del ISP.
 6. El ISP puede aprobar o rechazar la solicitud de cambio de plan.
 
-* ...
+
