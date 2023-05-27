@@ -1,0 +1,2048 @@
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (82.4ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (51.2ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-24 16:23:14.590200', '2023-05-24 16:23:14.590200')[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (36.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (49.6ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-24 16:23:32.682764', '2023-05-24 16:23:32.682764')[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (37.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `clientAsociated_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_clientAsociated_id` (`clientAsociated_id`))[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (76.3ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-24 16:29:56.832778', '2023-05-24 16:29:56.832778')[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (37.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (66.0ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (82.8ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (49.0ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-24 16:39:34.894628', '2023-05-24 16:39:34.894628')[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (41.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (75.2ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (45.0ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_plan_id` bigint, `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_plan_id` (`isp_plan_id`))[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 00:00:00.578572', '2023-05-27 00:00:00.578572')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (31.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (31.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (38.2ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (144.6ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_plan_id` bigint, `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_plan_id` (`isp_plan_id`))[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (95.2ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (34.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 00:00:23.520389', '2023-05-27 00:00:23.520389')[0m
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 21:09:28 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/home/lucasmvb/ProgramacionAvanzada/API_ISP/app/controllers/isp_controller.rb:22: else without rescue is useless
+        else
+        ^~~~
+/home/lucasmvb/ProgramacionAvanzada/API_ISP/app/controllers/isp_controller.rb:100: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/isp_controller.rb:22: else without rescue is useless
+app/controllers/isp_controller.rb:100: syntax error, unexpected `end', expecting end-of-input
+app/controllers/isp_controller.rb:22: else without rescue is useless
+app/controllers/isp_controller.rb:100: syntax error, unexpected `end', expecting end-of-input
+app/controllers/isp_controller.rb:22: else without rescue is useless
+app/controllers/isp_controller.rb:100: syntax error, unexpected `end', expecting end-of-input
+Started POST "/isp" for ::1 at 2023-05-26 21:12:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.5ms | Allocations: 3760)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/isp_controller.rb:84:in `check_token'
+Started POST "/isp" for ::1 at 2023-05-26 21:13:11 -0300
+Processing by IspController#create as */*
+  Parameters: {"name"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"password"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007f9337292ff8>, params: {"name"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 4.4ms | Allocations: 10697)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: nil, password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:14:25 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007f93372d6280>, params: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6403)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:15:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007efe25d9dad0>, params: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.1ms | Allocations: 12081)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (35.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (24.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (45.0ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (75.0ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_plan_id` bigint, `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_plan_id` (`isp_plan_id`))[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (49.5ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 00:16:53.821350', '2023-05-27 00:16:53.821350')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 21:17:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007ff89c1b0cf0>, params: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.4ms | Allocations: 12081)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:20:50 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007ff89e084730>, params: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms | Allocations: 7984)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:21:49 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+"name_isp": "isp1",
+"password": "123"
+Processing by IspController#create as */*
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms | Allocations: 722)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/isp_controller.rb:97:in `isp_params'
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:22:50 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :isp. Context: { controller: IspController, action: create, request: #<ActionDispatch::Request:0x00007ff89db08158>, params: {"name_isp"=>"isp1", "password"=>"[FILTERED]", "controller"=>"isp", "action"=>"create", "isp"=>{"name_isp"=>"isp1", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 6355)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/client" for ::1 at 2023-05-26 21:29:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "lastname"=>"Miranda", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007fe06e211ca8>, params: {"name"=>"David", "lastname"=>"Miranda", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 20.2ms | Allocations: 6842)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'lastname' for Client.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/client_controller.rb:32:in `create'
+Started POST "/client" for ::1 at 2023-05-26 21:29:57 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007fe06fb6c0b8>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (12.1ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (0.9ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '8e4cbd4e-a15e-406d-ae53-0b47e1bf6270', '2023-05-27 00:29:57.904165', '2023-05-27 00:29:57.904165')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (29.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 131ms (Views: 0.5ms | ActiveRecord: 42.7ms | Allocations: 9147)
+
+
+Started GET "/client?nickname=LMs" for ::1 at 2023-05-26 21:31:01 -0300
+Processing by ClientController#index as */*
+  Parameters: {"nickname"=>"LMs"}
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '8e4cbd4e-a15e-406d-ae53-0b47e1bf6270' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:79:in `check_token'
+  [1m[36mClient Load (4.1ms)[0m  [1m[34mSELECT `clients`.* FROM `clients`[0m
+  ↳ app/controllers/client_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 4.9ms | Allocations: 1909)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 21:34:21 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 3.1ms | Allocations: 4430)
+
+
+Started POST "/isp" for ::1 at 2023-05-26 21:35:20 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.7ms | Allocations: 10499)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:35:30 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 6288)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:38:26 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.5ms | Allocations: 9824)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:39:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 6.4ms | Allocations: 14795)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:40:23 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.7ms | Allocations: 9836)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (24.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (74.2ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_plan_id` bigint, `bandWidth` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_plan_id` (`isp_plan_id`))[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (51.9ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 00:43:59.577934', '2023-05-27 00:43:59.577934')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 21:44:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.0ms | Allocations: 14794)
+
+
+  
+NoMethodError (undefined method `name' for #<Isp id: nil, name_isp: "isp1", password: [FILTERED], token: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/isp_controller.rb:38:in `create'
+Started POST "/isp" for ::1 at 2023-05-26 21:45:47 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (0.3ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e', '2023-05-27 00:45:47.567421', '2023-05-27 00:45:47.567421')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 9355)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 21:46:20 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 21:46:30 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.5ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` IS NULL AND `isps`.`password` = '123'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 404 Not Found in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 766)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 21:46:49 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` IS NULL AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 404 Not Found in 13ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 710)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 21:47:08 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` IS NULL AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 710)
+
+
+Started POST "/isp" for ::1 at 2023-05-26 21:48:36 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 400 Bad Request in 20ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 2762)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 21:48:47 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 404 Not Found in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 2414)
+
+
+Started POST "/client" for ::1 at 2023-05-26 21:48:52 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007f248e6e8e30>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (6.7ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '7ae035ac-af2c-49dc-8d4d-4167a2c287d3', '2023-05-27 00:48:52.840972', '2023-05-27 00:48:52.840972')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 61ms (Views: 0.3ms | ActiveRecord: 12.7ms | Allocations: 6140)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 21:48:56 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 854)
+
+
+Started GET "/client" for ::1 at 2023-05-26 21:49:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ClientController#index as */*
+  [1m[36mClient Load (7.0ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '7ae035ac-af2c-49dc-8d4d-4167a2c287d3' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:79:in `check_token'
+  [1m[36mClient Load (5.9ms)[0m  [1m[34mSELECT `clients`.* FROM `clients`[0m
+  ↳ app/controllers/client_controller.rb:7:in `index'
+Completed 200 OK in 55ms (Views: 13.8ms | ActiveRecord: 28.3ms | Allocations: 11534)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 21:50:48 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 33ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 4987)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 21:51:51 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (2.0ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 34ms (Views: 0.2ms | ActiveRecord: 16.2ms | Allocations: 4325)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 21:52:29 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (10.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` IS NULL AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 404 Not Found in 14ms (Views: 0.2ms | ActiveRecord: 10.3ms | Allocations: 948)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 21:53:33 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name_isp"=>"isp1"}
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 4425)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 21:53:58 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 806)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 21:55:28 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps`[0m
+  ↳ app/controllers/isp_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 7.8ms | ActiveRecord: 1.8ms | Allocations: 5172)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 21:59:45 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "bandwith"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 6019)
+
+
+  
+NoMethodError (undefined method `check_token' for #<PlanController:0x0000000001c188>
+
+              target.send(@method_name, &block)
+                    ^^^^^):
+  
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.4.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/plan" for ::1 at 2023-05-26 22:01:30 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "bandwith"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:28:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:29:in `check_token'
+[31mUnpermitted parameter: :bandwith. Context: { controller: PlanController, action: create, request: #<ActionDispatch::Request:0x00007f112f22b360>, params: {"name_plan"=>"Plan 50 Megas", "bandwith"=>"50", "simetric"=>"true", "isp_plan"=>"isp1", "controller"=>"plan", "action"=>"create"} }[0m
+  [1m[36mIsp Load (1.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` IS NULL LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 4.6ms | Allocations: 8859)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/plan_controller.rb:10:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:03:19 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "bandwith"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:28:in `check_token'
+  [1m[36mIsp Load (2.8ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:29:in `check_token'
+[31mUnpermitted parameter: :bandwith. Context: { controller: PlanController, action: create, request: #<ActionDispatch::Request:0x00007f114d4ed6c0>, params: {"name_plan"=>"Plan 50 Megas", "bandwith"=>"50", "simetric"=>"true", "isp_plan"=>"isp1", "controller"=>"plan", "action"=>"create"} }[0m
+  [1m[36mIsp Load (8.8ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 15.8ms | Allocations: 8493)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/plan_controller.rb:10:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:06:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:28:in `check_token'
+  [1m[36mIsp Load (5.1ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:29:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 12.4ms | Allocations: 8414)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/plan_controller.rb:10:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:07:37 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:28:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:29:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 1992)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/plan_controller.rb:10:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:09:57 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:30:in `check_token'
+  [1m[36mIsp Load (7.0ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'a4799f63-0bc0-4c0a-85a6-bdb8fbd81a6e' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:31:in `check_token'
+  [1m[36mIsp Load (0.6ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 11.6ms | Allocations: 12616)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'band_width' for Plan.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/plan_controller.rb:11:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (30.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (30.8ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154416')[0m
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (20230524154537)
+  [1m[35m (48.4ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154537')[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20230524154757)
+  [1m[35m (67.3ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_plan_id` bigint, `band_width` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_plan_id` (`isp_plan_id`))[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524154757')[0m
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20230524155807)
+  [1m[35m (45.4ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230524155807')[0m
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 01:11:51.724581', '2023-05-27 01:11:51.724581')[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 22:12:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (6.4ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', '1ff75e99-162c-46dc-9459-5f508a5a7134', '2023-05-27 01:12:05.876929', '2023-05-27 01:12:05.876929')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 97ms (Views: 0.4ms | ActiveRecord: 53.4ms | Allocations: 14111)
+
+
+Started POST "/client" for ::1 at 2023-05-26 22:12:08 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007f8204c0e8c8>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (9.2ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '6e2476b0-72f5-4f70-b608-bad67a4873fd', '2023-05-27 01:12:08.593797', '2023-05-27 01:12:08.593797')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 87ms (Views: 0.4ms | ActiveRecord: 40.0ms | Allocations: 6468)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 22:12:13 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name_isp"=>"isp1"}
+  [1m[36mIsp Load (1.6ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 975)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-26 22:13:15 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps`[0m
+  ↳ app/controllers/isp_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1774)
+
+
+Started GET "/client" for ::1 at 2023-05-26 22:13:18 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6e2476b0-72f5-4f70-b608-bad67a4873fd' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:79:in `check_token'
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients`[0m
+  ↳ app/controllers/client_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1561)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 22:13:27 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name_isp"=>"isp1"}
+  [1m[36mIsp Load (3.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 3.3ms | Allocations: 830)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 22:13:30 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (5.1ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 5.1ms | Allocations: 830)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 22:13:40 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:30:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:31:in `check_token'
+  [1m[36mIsp Load (3.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.7ms | Allocations: 7831)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'isp_plan' for Plan.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/plan_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddIspPlanToPlans (20230527011946)
+  [1m[35m (43.2ms)[0m  [1m[35mALTER TABLE `plans` ADD `isp_plan` varchar(255)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230527011946')[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/plan" for ::1 at 2023-05-26 22:24:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (3.6ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:30:in `check_token'
+  [1m[36mIsp Load (4.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:31:in `check_token'
+  [1m[36mIsp Load (3.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 42.7ms | Allocations: 27733)
+
+
+  
+NameError (Rails couldn't find a valid model for Requests association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/plan_controller.rb:11:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:27:42 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:30:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:31:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 4.5ms | Allocations: 8234)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 0..1)):
+  
+app/controllers/plan_controller.rb:11:in `create'
+Started POST "/plan" for ::1 at 2023-05-26 22:30:09 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:34:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:35:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 7.6ms | Allocations: 17732)
+
+
+  
+NameError (Rails couldn't find a valid model for Requests association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/plan_controller.rb:11:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (32.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (38.7ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (12.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (3.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (65.4ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (48.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (7.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRequests (20230524154416)
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (1)
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (9.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('1')[0m
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (2)
+  [1m[35m (97.8ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('2')[0m
+  [1m[36mTRANSACTION (23.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (3)
+  [1m[35m (60.2ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_id` bigint, `band_width` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_ab93fd71ab`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('3')[0m
+  [1m[36mTRANSACTION (20.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRequests (4)
+  [1m[35m (78.2ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` int, `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('4')[0m
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 02:16:45.776623', '2023-05-27 02:16:45.776623')[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 23:19:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (2.8ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', '92884aca-14cc-4e64-98c5-0938a2dd6ff2', '2023-05-27 02:19:03.988979', '2023-05-27 02:19:03.988979')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (39.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 122ms (Views: 1.1ms | ActiveRecord: 55.3ms | Allocations: 14146)
+
+
+Started POST "/client" for ::1 at 2023-05-26 23:19:17 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007ff08cf7f038>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (0.8ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '42bf8219-0649-4d1b-be9d-e1b209441be7', '2023-05-27 02:19:18.001050', '2023-05-27 02:19:18.001050')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 93ms (Views: 0.3ms | ActiveRecord: 24.5ms | Allocations: 6467)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 23:19:59 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 984)
+
+
+Started POST "/client" for ::1 at 2023-05-26 23:20:01 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007ff08cefd6a0>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 400 Bad Request in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 2857)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 23:20:34 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (11.6ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 19ms (Views: 1.3ms | ActiveRecord: 11.6ms | Allocations: 825)
+
+
+Started POST "/isp/isp1/login" for 127.0.0.1 at 2023-05-26 23:20:36 -0300
+Processing by IspController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "name_isp"=>"isp1"}
+  [1m[36mIsp Load (1.8ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' AND `isps`.`password` = '1233'[0m
+  ↳ app/controllers/isp_controller.rb:76:in `login'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.8ms | Allocations: 867)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 23:20:40 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (2.1ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (4.9ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1ff75e99-162c-46dc-9459-5f508a5a7134' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 0.2ms | ActiveRecord: 7.0ms | Allocations: 1701)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 23:20:47 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (11.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '42bf8219-0649-4d1b-be9d-e1b209441be7' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.5ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '42bf8219-0649-4d1b-be9d-e1b209441be7' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (1.5ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (5.8ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 50 Megas', 1, '50', TRUE, '2023-05-27 02:20:47.911593', '2023-05-27 02:20:47.911593')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 202ms (Views: 0.6ms | ActiveRecord: 58.9ms | Allocations: 13775)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 23:23:09 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 100 Megas", "band_width"=>"100", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '42bf8219-0649-4d1b-be9d-e1b209441be7' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '42bf8219-0649-4d1b-be9d-e1b209441be7' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (0.8ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 100 Megas', 1, '100', TRUE, '2023-05-27 02:23:09.925145', '2023-05-27 02:23:09.925145')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (30.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 62ms (Views: 0.5ms | ActiveRecord: 32.8ms | Allocations: 4040)
+
+
+Started GET "/plan" for ::1 at 2023-05-26 23:25:19 -0300
+Processing by PlanController#index as */*
+  [1m[36mClient Load (3.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '92884aca-14cc-4e64-98c5-0938a2dd6ff2' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (3.0ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '92884aca-14cc-4e64-98c5-0938a2dd6ff2' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mPlan Load (4.8ms)[0m  [1m[34mSELECT `plans`.* FROM `plans`[0m
+  ↳ app/controllers/plan_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 5.0ms | ActiveRecord: 11.1ms | Allocations: 2188)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (37.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (1)
+  [1m[35m (29.2ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('1')[0m
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (2)
+  [1m[35m (39.4ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('2')[0m
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (3)
+  [1m[35m (46.5ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_id` bigint, `band_width` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_ab93fd71ab`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('3')[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRequests (4)
+  [1m[35m (65.4ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` varchar(255), `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('4')[0m
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 02:38:49.345125', '2023-05-27 02:38:49.345125')[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-26 23:39:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (0.5ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', 'bf5ee120-aada-4f21-90db-6d466476cd1c', '2023-05-27 02:39:31.337494', '2023-05-27 02:39:31.337494')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (34.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 120ms (Views: 0.4ms | ActiveRecord: 36.5ms | Allocations: 14110)
+
+
+Started POST "/client" for ::1 at 2023-05-26 23:39:56 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007f77859e4e00>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (0.2ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '6aaa9171-a8b8-4987-8d60-fde037f172a4', '2023-05-27 02:39:56.902026', '2023-05-27 02:39:56.902026')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (38.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 64ms (Views: 0.4ms | ActiveRecord: 52.0ms | Allocations: 6467)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 23:40:49 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'bf5ee120-aada-4f21-90db-6d466476cd1c' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'bf5ee120-aada-4f21-90db-6d466476cd1c' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (0.4ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 50 Megas', 1, '50', TRUE, '2023-05-27 02:40:49.535549', '2023-05-27 02:40:49.535549')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (29.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 88ms (Views: 0.5ms | ActiveRecord: 32.7ms | Allocations: 12723)
+
+
+Started POST "/plan" for ::1 at 2023-05-26 23:40:51 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 100 Megas", "band_width"=>"100", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'bf5ee120-aada-4f21-90db-6d466476cd1c' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'bf5ee120-aada-4f21-90db-6d466476cd1c' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (0.8ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 100 Megas', 1, '100', TRUE, '2023-05-27 02:40:51.844713', '2023-05-27 02:40:51.844713')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (53.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 75ms (Views: 0.6ms | ActiveRecord: 54.7ms | Allocations: 4020)
+
+
+Started GET "/plan" for ::1 at 2023-05-26 23:45:30 -0300
+Processing by PlanController#index as */*
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '92884aca-14cc-4e64-98c5-0938a2dd6ff2' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (7.8ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '92884aca-14cc-4e64-98c5-0938a2dd6ff2' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+Filter chain halted as :check_token rendered or redirected
+Completed 401 Unauthorized in 36ms (Views: 0.2ms | ActiveRecord: 9.5ms | Allocations: 5104)
+
+
+Started GET "/plan" for ::1 at 2023-05-26 23:45:41 -0300
+Processing by PlanController#index as */*
+  [1m[36mClient Load (6.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (5.9ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mPlan Load (6.7ms)[0m  [1m[34mSELECT `plans`.* FROM `plans`[0m
+  ↳ app/controllers/plan_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 5.2ms | ActiveRecord: 24.5ms | Allocations: 6738)
+
+
+Started POST "/request" for ::1 at 2023-05-26 23:47:08 -0300
+  
+SyntaxError (/home/lucasmvb/ProgramacionAvanzada/API_ISP/app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+Started POST "/request" for ::1 at 2023-05-26 23:49:39 -0300
+  
+SyntaxError (/home/lucasmvb/ProgramacionAvanzada/API_ISP/app/controllers/request_controller.rb:33: syntax error, unexpected `else', expecting `end'
+                else
+                ^~~~
+):
+  
+app/controllers/request_controller.rb:33: syntax error, unexpected `else', expecting `end'
+app/controllers/request_controller.rb:33: syntax error, unexpected `else', expecting `end'
+app/controllers/request_controller.rb:33: syntax error, unexpected `else', expecting `end'
+Started POST "/request" for ::1 at 2023-05-26 23:51:46 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 2987)
+
+
+  
+NameError (uninitialized constant RequestController::Player
+
+        @player=Player.find_by(token: token[1])#En token[0] queda "Bearer"
+                ^^^^^^
+Did you mean?  PlanHelper):
+  
+app/controllers/request_controller.rb:41:in `check_token'
+Started POST "/request" for ::1 at 2023-05-26 23:53:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+  
+NameError (uninitialized constant RequestController::Player
+
+        @player = Player.find_by(token: token[1])#En token[0] queda "Bearer"
+                  ^^^^^^
+Did you mean?  PlanHelper):
+  
+app/controllers/request_controller.rb:41:in `check_token'
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 23:55:25 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 111ms (Views: 3.8ms | ActiveRecord: 2.1ms | Allocations: 9195)
+
+
+Started POST "/request" for ::1 at 2023-05-26 23:55:42 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2867)
+
+
+  
+NameError (uninitialized constant RequestController::Player
+
+        @player = Player.find_by(token: token[1])#En token[0] queda "Bearer"
+                  ^^^^^^
+Did you mean?  PlanHelper):
+  
+app/controllers/request_controller.rb:41:in `check_token'
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 23:55:50 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 19ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 924)
+
+
+Started POST "/request" for ::1 at 2023-05-26 23:55:58 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2830)
+
+
+  
+NameError (uninitialized constant RequestController::Player
+
+        @player = Player.find_by(token: token[1])#En token[0] queda "Bearer"
+                  ^^^^^^
+Did you mean?  PlanHelper):
+  
+app/controllers/request_controller.rb:41:in `check_token'
+Started POST "/request" for ::1 at 2023-05-26 23:58:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (2.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:41:in `check_token'
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1\n' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 404 Not Found in 58ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 19455)
+
+
+Started POST "/client/LMs/login" for 127.0.0.1 at 2023-05-26 23:59:16 -0300
+Processing by ClientController#login as */*
+  Parameters: {"password"=>"[FILTERED]", "nickname"=>"LMs"}
+  [1m[36mClient Load (3.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' AND `clients`.`password` = '1233'[0m
+  ↳ app/controllers/client_controller.rb:70:in `login'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 3.3ms | Allocations: 1331)
+
+
+Started POST "/request" for ::1 at 2023-05-26 23:59:28 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (4.8ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:41:in `check_token'
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1\n' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (3.8ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 404 Not Found in 35ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 2133)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:01:11 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:41:in `check_token'
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1\n' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 404 Not Found in 51ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 11025)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:02:25 -0300
+  
+SyntaxError (/home/lucasmvb/ProgramacionAvanzada/API_ISP/app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+app/controllers/request_controller.rb:52: syntax error, unexpected `end', expecting end-of-input
+Started POST "/request" for ::1 at 2023-05-27 00:04:42 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1\n' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 404 Not Found in 41ms (Views: 0.2ms | ActiveRecord: 8.6ms | Allocations: 11108)
+
+
+Started GET "/client" for ::1 at 2023-05-27 00:05:30 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:79:in `check_token'
+  [1m[36mClient Load (5.7ms)[0m  [1m[34mSELECT `clients`.* FROM `clients`[0m
+  ↳ app/controllers/client_controller.rb:7:in `index'
+Completed 200 OK in 27ms (Views: 10.3ms | ActiveRecord: 6.0ms | Allocations: 1740)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:06:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1\n", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (4.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (6.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1\n' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (1.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 404 Not Found in 103ms (Views: 0.3ms | ActiveRecord: 15.6ms | Allocations: 19478)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:06:59 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.3ms | Allocations: 13406)
+
+
+  
+NameError (Rails couldn't find a valid model for Request association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/request_controller.rb:21:in `create'
+Started POST "/request" for ::1 at 2023-05-27 00:09:01 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '6aaa9171-a8b8-4987-8d60-fde037f172a4' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (5.6ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (8.7ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (2.0ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 36.8ms | Allocations: 18175)
+
+
+  
+NameError (Rails couldn't find a valid model for Request association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/request_controller.rb:21:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (34.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (1)
+  [1m[35m (38.0ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('1')[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (2)
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('2')[0m
+  [1m[36mTRANSACTION (18.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (3)
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_id` bigint, `band_width` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_ab93fd71ab`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('3')[0m
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRequests (4)
+  [1m[35m (95.3ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` varchar(255), `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('4')[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 03:09:23.448425', '2023-05-27 03:09:23.448425')[0m
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/client" for ::1 at 2023-05-27 00:09:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007f6e4325be68>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (2.9ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', 'd4b3d4aa-ba7d-47a9-a363-0899c035b9a2', '2023-05-27 03:09:37.918130', '2023-05-27 03:09:37.918130')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 64ms (Views: 0.5ms | ActiveRecord: 27.8ms | Allocations: 11829)
+
+
+Started POST "/isp" for ::1 at 2023-05-27 00:09:52 -0300
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (5.5ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', 'b446c0e1-8314-45b2-9772-f5969c2f3eee', '2023-05-27 03:09:53.063942', '2023-05-27 03:09:53.063942')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 86ms (Views: 0.3ms | ActiveRecord: 46.3ms | Allocations: 7577)
+
+
+Started POST "/plan" for ::1 at 2023-05-27 00:10:03 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (7.6ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (3.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 50 Megas', 1, '50', TRUE, '2023-05-27 03:10:03.286405', '2023-05-27 03:10:03.286405')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 101ms (Views: 0.3ms | ActiveRecord: 26.8ms | Allocations: 12723)
+
+
+Started POST "/plan" for ::1 at 2023-05-27 00:10:07 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 100 Megas", "band_width"=>"100", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (3.1ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 100 Megas', 1, '100', TRUE, '2023-05-27 03:10:07.645736', '2023-05-27 03:10:07.645736')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 109ms (Views: 0.3ms | ActiveRecord: 41.0ms | Allocations: 4039)
+
+
+Started GET "/isp?name=isp1" for ::1 at 2023-05-27 00:10:13 -0300
+Processing by IspController#index as */*
+  Parameters: {"password"=>"[FILTERED]", "name"=>"isp1"}
+  [1m[36mIsp Load (10.7ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:85:in `check_token'
+  [1m[36mIsp Load (4.7ms)[0m  [1m[34mSELECT `isps`.* FROM `isps`[0m
+  ↳ app/controllers/isp_controller.rb:6:in `index'
+Completed 200 OK in 48ms (Views: 9.2ms | ActiveRecord: 15.4ms | Allocations: 1592)
+
+
+Started GET "/plan" for ::1 at 2023-05-27 00:10:19 -0300
+Processing by PlanController#index as */*
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = 'b446c0e1-8314-45b2-9772-f5969c2f3eee' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans`[0m
+  ↳ app/controllers/plan_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 2.6ms | ActiveRecord: 1.0ms | Allocations: 2015)
+
+
+Started GET "/client" for ::1 at 2023-05-27 00:10:21 -0300
+Processing by ClientController#index as */*
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'd4b3d4aa-ba7d-47a9-a363-0899c035b9a2' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:79:in `check_token'
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients`[0m
+  ↳ app/controllers/client_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1420)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:10:46 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'd4b3d4aa-ba7d-47a9-a363-0899c035b9a2' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.6ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.9ms | Allocations: 8501)
+
+
+  
+NameError (Rails couldn't find a valid model for Request association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/request_controller.rb:21:in `create'
+Started POST "/request" for ::1 at 2023-05-27 00:13:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (12.9ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = 'd4b3d4aa-ba7d-47a9-a363-0899c035b9a2' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (7.7ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 54.3ms | Allocations: 29580)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ips' for Request.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/request_controller.rb:21:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (24.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_development`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `API_ISP_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `API_ISP_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `API_ISP_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('5696342758832662230', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateClients (1)
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE `clients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `nickname` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('1')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIsps (2)
+  [1m[35m (72.6ms)[0m  [1m[35mCREATE TABLE `isps` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_isp` varchar(255), `password` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('2')[0m
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (3)
+  [1m[35m (66.9ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name_plan` varchar(255), `isp_id` bigint, `band_width` varchar(255), `simetric` tinyint(1), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_plans_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_ab93fd71ab`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('3')[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRequests (4)
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE TABLE `requests` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `numberRequest` varchar(255), `acceptRequest` tinyint(1), `client_id` bigint, `plan_id` bigint, `isp_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_requests_on_client_id` (`client_id`), INDEX `index_requests_on_plan_id` (`plan_id`), INDEX `index_requests_on_isp_id` (`isp_id`), CONSTRAINT `fk_rails_c8e89259a1`
+FOREIGN KEY (`client_id`)
+  REFERENCES `clients` (`id`)
+, CONSTRAINT `fk_rails_2534749c18`
+FOREIGN KEY (`plan_id`)
+  REFERENCES `plans` (`id`)
+, CONSTRAINT `fk_rails_1f9d21e3b3`
+FOREIGN KEY (`isp_id`)
+  REFERENCES `isps` (`id`)
+)[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('4')[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-05-27 03:14:46.334858', '2023-05-27 03:14:46.334858')[0m
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('5696342758832662230')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/isp" for ::1 at 2023-05-27 00:14:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by IspController#create as */*
+  Parameters: {"name_isp"=>"isp1", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mIsp Create (2.4ms)[0m  [1m[32mINSERT INTO `isps` (`name_isp`, `password`, `token`, `created_at`, `updated_at`) VALUES ('isp1', '1233', '1f79fd09-70aa-4307-8e41-f3e185665063', '2023-05-27 03:14:59.743065', '2023-05-27 03:14:59.743065')[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (16.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/isp_controller.rb:38:in `create'
+Completed 200 OK in 94ms (Views: 1.6ms | ActiveRecord: 30.9ms | Allocations: 14110)
+
+
+Started POST "/plan" for ::1 at 2023-05-27 00:15:19 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 50 Megas", "band_width"=>"50", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1f79fd09-70aa-4307-8e41-f3e185665063' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (0.2ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1f79fd09-70aa-4307-8e41-f3e185665063' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 50 Megas', 1, '50', TRUE, '2023-05-27 03:15:20.010030', '2023-05-27 03:15:20.010030')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 133ms (Views: 0.4ms | ActiveRecord: 39.8ms | Allocations: 14173)
+
+
+Started POST "/plan" for ::1 at 2023-05-27 00:15:22 -0300
+Processing by PlanController#create as */*
+  Parameters: {"name_plan"=>"Plan 100 Megas", "band_width"=>"100", "simetric"=>"true", "isp_plan"=>"isp1"}
+  [1m[36mClient Load (2.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '1f79fd09-70aa-4307-8e41-f3e185665063' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:39:in `check_token'
+  [1m[36mIsp Load (3.9ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`token` = '1f79fd09-70aa-4307-8e41-f3e185665063' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:40:in `check_token'
+  [1m[36mIsp Load (0.3ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/plan_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mPlan Create (5.9ms)[0m  [1m[32mINSERT INTO `plans` (`name_plan`, `isp_id`, `band_width`, `simetric`, `created_at`, `updated_at`) VALUES ('Plan 100 Megas', 1, '100', TRUE, '2023-05-27 03:15:22.411016', '2023-05-27 03:15:22.411016')[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (25.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plan_controller.rb:13:in `create'
+Completed 200 OK in 91ms (Views: 0.3ms | ActiveRecord: 43.1ms | Allocations: 4039)
+
+
+Started POST "/client" for ::1 at 2023-05-27 00:15:33 -0300
+Processing by ClientController#create as */*
+  Parameters: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :client. Context: { controller: ClientController, action: create, request: #<ActionDispatch::Request:0x00007fa024155948>, params: {"name"=>"David", "password"=>"[FILTERED]", "nickname"=>"LMs", "controller"=>"client", "action"=>"create", "client"=>{"name"=>"David", "nickname"=>"LMs", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mClient Create (0.2ms)[0m  [1m[32mINSERT INTO `clients` (`name`, `nickname`, `password`, `token`, `created_at`, `updated_at`) VALUES ('David', 'LMs', '1233', '06e0e1c7-76cb-4a6f-ac17-575e24284f61', '2023-05-27 03:15:33.548855', '2023-05-27 03:15:33.548855')[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/client_controller.rb:32:in `create'
+Completed 200 OK in 36ms (Views: 0.6ms | ActiveRecord: 11.9ms | Allocations: 6402)
+
+
+Started POST "/request" for ::1 at 2023-05-27 00:15:44 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (3.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '06e0e1c7-76cb-4a6f-ac17-575e24284f61' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:39:in `check_token'
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (5.8ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 21.7ms | Allocations: 9696)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ips' for Request.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/request_controller.rb:21:in `create'
+Started POST "/request" for ::1 at 2023-05-27 00:18:42 -0300
+Processing by RequestController#create as */*
+  Parameters: {"nickname"=>"LMs", "name_isp"=>"isp1", "name_plan"=>"Plan 50 Megas"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`token` = '06e0e1c7-76cb-4a6f-ac17-575e24284f61' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:40:in `check_token'
+  [1m[36mClient Load (4.6ms)[0m  [1m[34mSELECT `clients`.* FROM `clients` WHERE `clients`.`nickname` = 'LMs' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:16:in `create'
+  [1m[36mIsp Load (5.4ms)[0m  [1m[34mSELECT `isps`.* FROM `isps` WHERE `isps`.`name_isp` = 'isp1' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:17:in `create'
+  [1m[36mPlan Load (4.8ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`name_plan` = 'Plan 50 Megas' LIMIT 1[0m
+  ↳ app/controllers/request_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/request_controller.rb:21:in `create'
+  [1m[36mRequest Create (3.6ms)[0m  [1m[32mINSERT INTO `requests` (`numberRequest`, `acceptRequest`, `client_id`, `plan_id`, `isp_id`, `created_at`, `updated_at`) VALUES ('7737cd32-04f8-41bc-aa1e-be4c6725c987', NULL, 1, 1, 1, '2023-05-27 03:18:42.677289', '2023-05-27 03:18:42.677289')[0m
+  ↳ app/controllers/request_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/request_controller.rb:21:in `create'
+Completed 200 OK in 178ms (Views: 0.3ms | ActiveRecord: 51.7ms | Allocations: 20908)
+
+
